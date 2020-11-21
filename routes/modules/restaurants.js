@@ -9,7 +9,6 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const name = req.body
-  console.log(name)
   return RestaurantList.create(name)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
@@ -19,8 +18,6 @@ router.get('/search', (req, res) => {
   const keyword = req.query.keyword
   return RestaurantList.find({ name: { $in: keyword } })
     .then(list => {
-      console.log(keyword)
-      console.log(list)
       res.render('index', { list, keyword })
     })
     .catch(error => console.log(error))
