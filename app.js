@@ -77,9 +77,17 @@ app.get('/restaurants/:id/edit', (req, res) => {
 app.post('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
   const name = req.body.name
+  const category = req.body.category
+  const location = req.body.location
+  const phone = req.body.phone
+  const description = req.body.description
   return RestaurantList.findById(id)
     .then(list => {
       list.name = name
+      list.category = category
+      list.location = location
+      list.phone = phone
+      list.description = description
       return list.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))

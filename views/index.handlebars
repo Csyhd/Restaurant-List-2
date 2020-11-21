@@ -13,11 +13,19 @@
         </div>
       </form>
     </div>
+    <div class="search-bar-inner">
+    </div>
   </div>
 </div>
 
+
 <!-- restaurant list -->
 <div class="container mt-5">
+  <div class="row mb-2">
+    <div class="col-md-10 col-12 mx-auto">
+      <a class="btn btn-primary col-3" href="/restaurants/new">Create New</a>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
@@ -34,17 +42,21 @@
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
-              <a href="/restaurants/new">Create</a>
-              <a href="/restaurants/{{ this._id }}">detail</a>
-              <a href="/restaurants/{{ this._id }}/edit">edit</a>
+            </div>
+            <div class="card-body p-3">
+              <a class="btn btn-info ml-1" href="/restaurants/{{ this._id }}">Show Detail</a>
+              <a class="btn btn-secondary ml-1" href="/restaurants/{{ this._id }}/edit">edit</a>
               <form action="/restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
-                <button type="submit">delete</button>
+                <button class="btn btn-danger ml-1" type="submit">delete</button>
               </form>
             </div>
           </div>
         </a>
         {{/each}}
+
       </div>
     </div>
+
   </div>
+
 </div>

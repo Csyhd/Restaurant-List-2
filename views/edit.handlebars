@@ -1,5 +1,29 @@
-<form action="/restaurants/{{ list._id }}/edit" method="POST">
-  <input type="text" placeholder="name" name="name" value="{{ list.name }}">
-  <button type="submit">Save</button>
-  <a href="/">back</a>
+<form action="/restaurants/{{ list._id }}/edit" method="POST" class="container">
+  <div class="row">
+    <div class="form-group col-12">
+      <label for="name">Restaurant Name</label>
+      <input type="text" class="form-control w-50" id="name" placeholder="name" name="name" value="{{ list.name }}">
+    </div>
+    <div class="form-group col-12">
+      <label for="category">Category Name</label>
+      <input type="text" class="form-control w-50" id="category" placeholder="category" name="category"
+        value="{{list.category}}">
+    </div>
+    <div class="form-group col-12">
+      <label for="location">Location</label>
+      <input type="text" class="form-control w-50" id="location" placeholder="location" name="location"
+        value="{{list.location}}">
+    </div>
+    <div class="form-group col-12">
+      <label for="phone">Phone Namber</label>
+      <input type="text" class="form-control w-50" id="phone" placeholder="phone" name="phone" value=" {{list.phone}}">
+    </div>
+    <div class="form-group col-12">
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control w-50" id="description" placeholder="description" name="description"
+        value="{{list.description}}">{{list.description}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-info ml-2">Submit</button>
+    <a href="/" class="btn btn-dark ml-2">Back</a>
+  </div>
 </form>
