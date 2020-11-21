@@ -25,24 +25,23 @@ db.once('open', () => {
 app.get('/', (req, res) => {
   RestaurantList.find()
     .lean()
-    .then(list => res.render('index', { list }))
+    .then(list => res.render('index', { list })
+    )
     .catch(error => console.error(error))
 })
 
-// app.get('/search', (req, res) => {
-//   const keyword = req.query.keyword
-//   const restaurants = restaurantList.results.filter(restaurant => {
-//     return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
-//   })
-//   res.render('index', { restaurants: restaurants, keyword: keyword })
-// })
+app.get('/search', (req, res) => {
+  const keyword = req.query.keyword
+  return RestaurantList.find({ name: { $in: keyword } })
+    .then(list => {
+      console.log(keyword)
+      console.log(list)
+      res.render('index', { list, keyword })
+    })
+    .catch(error => console.log(error))
+})
 
-// app.get('/restaurants/:restaurants_id', (req, res) => {
-//   const restaurant = restaurantList.results.find(restaurant => {
-//     return restaurant.id.toString() === req.params.restaurants_id
-//   })
-//   res.render('show', { restaurant: restaurant })
-// })
+
 
 app.get('/restaurants/new', (req, res) => {
   return res.render('new')
