@@ -2,8 +2,8 @@
 <div class="container">
 
   <div class="card-body p-3 col-6 col-md-10 mx-auto row">
-    <a class="btn btn-secondary ml-1" href="/restaurants/{{ list._id }}/edit">edit</a>
-    <form action="/restaurants/{{ list._id }}/delete" method="POST" style="display: inline;">
+    <a class="btn btn-secondary ml-1" href="/restaurants/{{ list._id }}?_method=PUT">edit</a>
+    <form action="/restaurants/{{ list._id }}?_method=DELETE" method="POST" style="display: inline;">
       <button class="btn btn-danger ml-1" type="submit">delete</button>
     </form>
     <a href="/" class="btn btn-dark ml-1">Back</a>

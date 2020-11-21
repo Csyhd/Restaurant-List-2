@@ -4,6 +4,7 @@ const restaurantList = require('./restaurant.json')
 const mongoose = (require('mongoose'))
 const bodyParser = require('body-parser')
 const RestaurantList = require('./models/restaurantList')
+const methodOverride = require('method-override')
 const app = express()
 const port = 3000
 const db = mongoose.connection
@@ -12,6 +13,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 mongoose.connect('mongodb://localhost/restaurant_2_0', { useNewUrlParser: true, useUnifiedTopology: true })
 
