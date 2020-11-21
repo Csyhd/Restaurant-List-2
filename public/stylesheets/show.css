@@ -10,7 +10,7 @@ header {
   color: #226089;
 }
 
-.banner {
+/* .banner {
   position: relative;
   z-index: -1;
   margin: -5px;
@@ -18,7 +18,7 @@ header {
   background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
   background-size: cover;
   filter: blur(3px);
-}
+} */
 
 /* .search-bar .search-bar-outer {
   margin: 0 auto;
@@ -60,17 +60,23 @@ header {
 }
 
 .restaurant-show-title {
-  position: relative;
-  top: -100px;
-  color: white;
+  width: 50%;
+  margin: 0 auto;
+  color:black;
   text-align: center;
   font-size: 3rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 20px rgba(56, 64, 75, 0.61);
 }
 
 @media screen and (max-width: 768px) {
   .restaurant-show-title {
     font-size: 2rem;
   }
+}
+
+.restaurant-show-features{
+  position: absolute;
+  top:270px;
+  left:1000px;
 }
 

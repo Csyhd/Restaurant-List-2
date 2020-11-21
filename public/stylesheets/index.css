@@ -69,14 +69,14 @@ body {
   font-size: 0.8rem;
 }
 
-.restaurant-show-title {
+/* .restaurant-show-title {
   position: relative;
   top: -100px;
   color: white;
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+} */
 
 @media screen and (max-width: 992px) {
   
