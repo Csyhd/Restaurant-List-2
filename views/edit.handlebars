@@ -1,6 +1,11 @@
 <form action="/restaurants/{{ list._id }}?_method=PUT" method="POST" class="container">
   <div class="row">
     <div class="form-group col-12">
+      <label for="description">Image</label>
+      <textarea type="text" class="form-control w-50" id="image" placeholder="image" name="image"
+        value="{{list.image}}">{{list.image}}</textarea>
+    </div>
+    <div class="form-group col-12">
       <label for="name">Restaurant Name</label>
       <input type="text" class="form-control w-50" id="name" placeholder="name" name="name" value="{{ list.name }}">
     </div>
@@ -15,7 +20,7 @@
         value="{{list.location}}">
     </div>
     <div class="form-group col-12">
-      <label for="phone">Phone Namber</label>
+      <label for="phone">Phone Number</label>
       <input type="text" class="form-control w-50" id="phone" placeholder="phone" name="phone" value=" {{list.phone}}">
     </div>
     <div class="form-group col-12">

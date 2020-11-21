@@ -20,56 +20,55 @@
             </div>
           </div>
         </div>
-
         <div class="dropdown col-4 text-right">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Dropdown button
+            分類
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="/asc">A->Z</a>
+            <a class="dropdown-item" href="/desc">Z->A</a>
+            <a class="dropdown-item" href="/category">類別</a>
+            <a class="dropdown-item" href="/location">地區</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- restaurant list -->
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-md-10 col-12 mx-auto">
-      <div class="card-columns">
-        {{#each list }}
-        <a href="/restaurants/{{ this._id }}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
+  <!-- restaurant list -->
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <div class="card-columns">
+          {{#each list }}
+          <a href="/restaurants/{{ this._id }}" class="text-secondary">
+            <div class="card mb-3">
+              <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+              <div class="card-body p-3">
+                <h6 class="card-title mb-1">{{this.name}}</h6>
+                <div class="restaurant-category mb-1">
+                  <i class="fas fa-utensils pr-2"></i> {{this.category}}
+                </div>
+                <span class="badge badge-pill badge-danger font-weight-normal">
+                  {{this.rating}}
+                  <i class="fas fa-star fa-xs"></i>
+                </span>
               </div>
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{this.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
+              <div class="card-footer text-right">
+                <a class="btn btn-link btn-sm  ml-1" href="/restaurants/{{ this._id }}">Detail</a>
+                <a class="btn btn-link btn-sm  ml-1" href="/restaurants/{{ this._id }}/edit">edit</a>
+                <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+                  <button class="btn btn-danger btn-sm ml-1" type="submit">delete</button>
+                </form>
+              </div>
             </div>
-            <div class="card-footer text-right">
-              <a class="btn btn-link btn-sm  ml-1" href="/restaurants/{{ this._id }}">Detail</a>
-              <a class="btn btn-link btn-sm  ml-1" href="/restaurants/{{ this._id }}/edit">edit</a>
-              <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
-                <button class="btn btn-danger btn-sm ml-1" type="submit">delete</button>
-              </form>
-            </div>
-          </div>
-        </a>
-        {{/each}}
+          </a>
+          {{/each}}
 
+        </div>
       </div>
+
     </div>
 
   </div>
-
-</div>

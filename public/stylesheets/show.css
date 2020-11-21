@@ -76,7 +76,13 @@ header {
 
 .restaurant-show-features{
   position: absolute;
-  top:270px;
-  left:1000px;
+  top:0x;
+  left:0px;
 }
 
+/* 
+body{
+  position: relative;
+  top:0x;
+  left:0px;
+} */

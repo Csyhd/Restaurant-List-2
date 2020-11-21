@@ -10,15 +10,15 @@ header {
   color: #226089;
 }
 
-body {
-  /* position: relative;
+/* body {
+  position: relative;
   z-index: -1;
   margin: -5px;
-  height: 360px; */
-  /* background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
-  background-size: cover; */
-  /* filter: blur(3px); */
-}
+  height: 360px;
+  background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  background-size: cover;
+  filter: blur(3px);
+} */
 
 /* .search-bar .search-bar-outer {
   margin: 0 auto;
@@ -104,5 +104,4 @@ body {
   overflow: hidden;
   width: 300px;
   height: 40px;
-
 }
