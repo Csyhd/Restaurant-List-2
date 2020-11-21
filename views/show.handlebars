@@ -1,10 +1,10 @@
 <h1 class="mb-2 mt-2 restaurant-show-title">{{list.name}}</h1>
 <div class="nav flex-column restaurant-show-features">
-  <a class="nav-link btn btn-info mt-3" href="/restaurants/{{ list._id }}/edit">edit</a>
+  <a class="nav-link btn btn-info mt-3" href="/restaurants/{{ list._id }}/edit">編輯</a>
   <form action="/restaurants/{{ list._id }}?_method=DELETE" method="POST" style="display: inline;">
-    <button class="nav-link btn btn-danger mt-3" type="submit">delete</button>
+    <button class="nav-link btn btn-danger mt-3" type="submit">刪除</button>
   </form>
-  <a href="/" class="nav-link btn btn-dark mt-3">Back</a>
+  <a href="/" class="nav-link btn btn-dark mt-3">返回</a>
 </div>
 <div class="container restaurant-show-content">
   <div class="row">
