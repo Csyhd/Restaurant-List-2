@@ -16,8 +16,16 @@ router.post('/', (req, res) => {
 
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  return RestaurantList.find({ name: { $in: keyword } })
+  return RestaurantList.find({
+    name: {
+      $regex: new RegExp(keyword, "i")
+    }
+  })
+
+    .lean()
     .then(list => {
+      console.log(keyword)
+      console.log(list)
       res.render('index', { list, keyword })
     })
     .catch(error => console.log(error))
