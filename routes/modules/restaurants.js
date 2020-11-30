@@ -8,8 +8,17 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const name = req.body
-  return RestaurantList.create(name)
+  const newRestaurantList = req.body
+
+  for (let value of Object.values(newRestaurantList)) {
+    console.log(value)
+    if (value === '') {
+      res.redirect('/restaurants/new')
+      return
+    }
+  }
+
+  return RestaurantList.create(newRestaurantList)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
@@ -21,11 +30,8 @@ router.get('/search', (req, res) => {
       $regex: new RegExp(keyword, "i")
     }
   })
-
     .lean()
     .then(list => {
-      console.log(keyword)
-      console.log(list)
       res.render('index', { list, keyword })
     })
     .catch(error => console.log(error))
@@ -76,6 +82,7 @@ router.delete('/:id', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
+
 
 
 module.exports = router
